@@ -14,7 +14,7 @@ services:
       - 9200:9200
     volumes:
       - ./es0.yml:/usr/share/elasticsearch/config/elasticsearch.yml
-      - ./config/elasticsearch.keystore:/usr/share/elasticsearch/config/elasticsearch.keystore
+      - ./elasticsearch.keystore:/usr/share/elasticsearch/config/elasticsearch.keystore
       - ./log4j2.properties:/usr/share/elasticsearch/config/log4j2.properties 
     networks:
       - esnet
