@@ -1,23 +1,13 @@
 version: '3'
 services:
-  elasticsearch0:
+  es0:
     image: docker.elastic.co/elasticsearch/elasticsearch:8.4.0
-    container_name: es0
-    hostname: es0
     environment:
       - "ES_JAVA_OPTS=-Xms512m -Xmx512m"
-    ulimits:
-      memlock:
-        soft: -1
-        hard: -1
     ports:
       - 9200:9200
     volumes:
       - ./es0.yml:/usr/share/elasticsearch/config/elasticsearch.yml
       - ./elasticsearch.keystore:/usr/share/elasticsearch/config/elasticsearch.keystore
       - ./log4j2.properties:/usr/share/elasticsearch/config/log4j2.properties 
-    networks:
-      - esnet
 
-networks:
-  esnet:
