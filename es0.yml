@@ -1,0 +1,7 @@
+network.host: 0.0.0.0
+cluster.name: docker-single-node-cluster
+discovery.type: single-node
+node.name: es0
+xpack.license.self_generated.type: trial
+xpack.security.enabled: true
+
